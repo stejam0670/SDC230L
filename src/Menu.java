@@ -36,6 +36,8 @@ public class Menu {
     }
 
     public static double readNumInput(Scanner input, boolean isDenominator) {
+        // Read numerical input from the console and loop until valid input is provided
+        // Additionally check to prevent attempts to divide by zero
         double value;
 
         while (true) {
@@ -50,6 +52,7 @@ public class Menu {
     }
 
     public static double readNumInput(Scanner input) {
+        // Read numerical input from the console and loop until valid input is provided
         double value;
 
         while (true) {
@@ -59,6 +62,20 @@ public class Menu {
                 return value;
             } catch (NumberFormatException e) {
                 System.out.println("Entry must be a number. Please try again");
+            }
+        }
+    }
+
+    public static Operation readFormulaInput(Scanner input) {
+        // Read formula input from the console and loop until valid input is provided
+        while (true) {
+            try {
+                System.out.print("Please enter the formula: ");
+                String formula = input.nextLine();
+
+                return Calculator.evaluateFormula(formula);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid formula: " + e.getMessage());
             }
         }
     }
