@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
-    public static int ShowMenu(Scanner input) {
+    public static int showMenu(Scanner input) {
         int userSelection;
 
         // This will loop until the exit condition is reached.

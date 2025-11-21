@@ -11,10 +11,12 @@ public class App {
 
         Scanner input = new Scanner(System.in);
 
+        // Use a constant to allow easy changing of exit value
         final int EXIT_VALUE = 0;
 
+        // Loop will run until explicitly broken out of
         while (true) {
-            int userSelection = Menu.ShowMenu(input);
+            int userSelection = Menu.showMenu(input);
             if (userSelection == EXIT_VALUE) {
                 break;
             }
