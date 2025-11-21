@@ -11,20 +11,41 @@ public class App {
 
         Scanner input = new Scanner(System.in);
 
-        // Use a constant to allow easy changing of exit value
-        final int EXIT_VALUE = 0;
-
-        // Loop will run until explicitly broken out of
-        while (true) {
-            int userSelection = Menu.showMenu(input);
-            if (userSelection == EXIT_VALUE) {
-                break;
-            }
-
-            System.out.println("You selected " + userSelection);
-        }
+        programLoop(input);
 
         System.out.println("Thank you for using Stephen's Calculator.");
         input.close();
+    }
+
+    public static void programLoop(Scanner input) {
+        // Use constants to allow easy changing of control values
+        final int EXIT_VALUE = 0;
+        final int DIVISION_VALUE = 4;
+        final int FORMULA_VALUE = 5;
+
+        while (true) {
+            double num1, num2;
+
+            int userSelection = Menu.showMenu(input);
+
+            switch (userSelection) {
+                case EXIT_VALUE:
+                    return;
+
+                case FORMULA_VALUE:
+                    System.out.println("Formula chosen - not implemented yet.");
+                    break;
+
+                case DIVISION_VALUE:
+                    num1 = Menu.readNumInput(input);
+                    num2 = Menu.readNumInput(input, true);
+                    break;
+
+                default:
+                    num1 = Menu.readNumInput(input);
+                    num2 = Menu.readNumInput(input);
+                    break;
+            }
+        }
     }
 }
