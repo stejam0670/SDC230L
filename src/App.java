@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) {
 
         // Program header
-        System.out.println("Calculator Application - Memory and Arithmetic - Stephen James");
+        System.out.println("Calculator Application - Exception Handling - Stephen James");
 
         // Welcome message
         System.out.println("Welcome to the calculator program.");
